@@ -9,14 +9,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var $ = jQuery;
 
 function eventHandler() {
-	// полифил для object-fit
-	objectFitImages(); // для свг
-
-	svg4everybody({}); // JSCCommon.CustomInputFile();
-	// добавляет подложку для pixel perfect
-
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>'); // /добавляет подложку для pixel perfect
-
 	var icon = "<svg width=\"49\" height=\"96\" viewBox=\"0 0 49 96\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M1 95L48 48L1.00001 0.999996\" stroke=\"black\"/>\n</svg>";
 	var arrl2 = ' <div class="r">' + icon,
 			arrr2 = ' <div class="l">' + icon; // // карусель
@@ -30,8 +22,8 @@ function eventHandler() {
 		nextArrow: arrl2,
 		dots: true,
 		// autoplay: true,
-		autoplaySpeed: 6000,
-		lazyLoad: 'progressive'
+		autoplaySpeed: 6000 // lazyLoad: 'progressive',
+
 	};
 	$('.slider-js').slick(_objectSpread({}, defaultSlide, {
 		slidesToShow: 1

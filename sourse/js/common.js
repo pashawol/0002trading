@@ -1,16 +1,6 @@
 const $ = jQuery;
 
 function eventHandler() {
-	// полифил для object-fit
-	objectFitImages();
-	// для свг
-	svg4everybody({});
-	// JSCCommon.CustomInputFile();
-	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>')
-	// /добавляет подложку для pixel perfect
-
-
 
 	const icon = `<svg width="49" height="96" viewBox="0 0 49 96" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1 95L48 48L1.00001 0.999996" stroke="black"/>
@@ -29,7 +19,7 @@ function eventHandler() {
 		dots: true,
 		// autoplay: true,
 		autoplaySpeed: 6000,
-		lazyLoad: 'progressive',
+		// lazyLoad: 'progressive',
 	};
 	$('.slider-js').slick({
 		...defaultSlide,
