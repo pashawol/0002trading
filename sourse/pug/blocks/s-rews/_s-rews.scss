@@ -13,7 +13,9 @@
 			padding: rem(60) rem(40);
 		}
 
-		padding: rem(30) rem(20) 0;
+		// padding: rem(30) rem(20);
+		padding-left: rem(20);
+		padding-right: rem(20);
 	}
 
 	p {
@@ -23,12 +25,19 @@
 	&__img-wrap {
 		background-color: #ffffff;
 		box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.19);
-		border-radius: 20px;
 		max-width: rem(1050);
 		margin-left: auto;
 		margin-right: auto;
 		padding: rem(20);
-		height: rem(423);
+
+		@include media-breakpoint-up(md) {
+
+			border-radius: 20px;
+			height: rem(423);
+		}
+
+		border-radius: 15px;
+
 		text-align: center;
 		display: flex;
 		align-items: center;
