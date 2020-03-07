@@ -1,0 +1,32 @@
+mixin s-result()
+	// start s-result
+	+b.SECTION.s-result.section#s-result&attributes(attributes)
+		.container
+			h2.text-center Какой конкретно результат&nbsp;Вы получите после обучения 
+			+e.row.row
+				.col-xl-5.col-lg-6
+					+e.title Посмотрите это короткое видео (7&nbsp;минут) с&nbsp;примером торговой сделки. Не&nbsp;пугайтесь непонятных терминов&nbsp;&mdash; это фрагмент заключительной части курса!
+					p Все термины и&nbsp;суть торговой стратегии объясняются в&nbsp;первых уроках. Цель данного видео: наглядно показать, как именно&nbsp;Вы будете зарабатывать!
+				.col
+					+e.video-wrap
+						<iframe src="https://player.vimeo.com/video/393248998?title=0&byli ne=0&portrait=0" width="800" height="450" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> 
+			+e.row-2.row
+				mixin item()
+					+e.col.col-lg-4.col-md-6
+						block
+				+item()
+					| Вы&nbsp;узнаете, #[strong как устроен рынок фьючерсов] США
+				+item()
+					| Вы&nbsp;узнаете,  #[strong как открыть счет, установить и&nbsp;настроить] торговый терминал
+				+item()
+					| Вы&nbsp;узнаете  #[strong правила грамотного управления сделкой], чтобы не&nbsp;терпеть убытки
+				+item()
+					| Вы&nbsp;получите  #[strong проверенную торговую стратегию], с&nbsp;помощью которой можно зарабатывать от&nbsp;100 долларов каждый день
+				+item()
+					| Вы&nbsp;получите  #[strong личный финансовый план трейдера] и&nbsp;освоите правила его составления
+				+item()
+					| Вы&nbsp;получите #[strong  обзор всех необходимых инструментов] и&nbsp;получите  #[strong советы по&nbsp;организации рабочего места]
+
+			+e.footer А&nbsp;также все необходимые дополнительные материалы, программы и&nbsp;персональную помощь в&nbsp;настройке
+			+e.btn.btn.lb_target(type="button") Заинтересовало? Хотите так же? Кликайте!
+	// end s-result

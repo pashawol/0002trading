@@ -1,0 +1,42 @@
+.idvd_timer{
+    white-space: nowrap;
+    text-align: center;
+}
+.idvd_timer>div{
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    width: 6em;
+    margin-right: 1.2em;
+    color: #ffffff;
+}
+.idvd_timer>div:last-child{
+    margin-right: 0;
+}
+.idvd_timer .tmr_el_val{
+    border-radius: 0.15em;
+    color: #ffffff;
+    background-color: #000000;
+    font-weight: bold;
+    font-size: 3.5em;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.3em 0;
+}
+
+.idvd_timer .tmr_el_unit{
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 0.6em;
+}
+
+@media all and (max-width: 480px) {
+    .idvd_timer>div{
+        width: 5em;
+        margin-right: 0.3em;
+    }
+    .idvd_timer .tmr_el_val{
+        font-size: 2.5em;
+    }
+}

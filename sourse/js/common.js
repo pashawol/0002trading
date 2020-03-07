@@ -1,0 +1,176 @@
+const $ = jQuery;
+
+function eventHandler() {
+	// полифил для object-fit
+	objectFitImages();
+	// для свг
+	svg4everybody({});
+	// JSCCommon.CustomInputFile();
+	// добавляет подложку для pixel perfect
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>')
+	// /добавляет подложку для pixel perfect
+
+
+
+	const icon = `<svg width="49" height="96" viewBox="0 0 49 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 95L48 48L1.00001 0.999996" stroke="black"/>
+</svg>`;
+	const arrl2 = (' <div class="r">' + icon),
+		arrr2 = (' <div class="l">' + icon);
+	// // карусель
+
+	const defaultSlide = {
+		speed: 600,
+		infinite: true,
+		arrows: true,
+		mobileFirst: true,
+		prevArrow: arrr2,
+		nextArrow: arrl2,
+		dots: true,
+		// autoplay: true,
+		autoplaySpeed: 6000,
+		lazyLoad: 'progressive',
+	};
+	$('.slider-js').slick({
+		...defaultSlide,
+
+		slidesToShow: 1,
+
+	});
+
+
+};
+if (document.readyState !== 'loading') {
+	eventHandler();
+} else {
+	document.addEventListener('DOMContentLoaded', eventHandler);
+}
+
+
+$(function () {
+	var today = new Date();
+	var moscow_time = new Date();
+	moscow_time.setTime(today.getTime() + 3 * 60 * 60 * 1000);
+
+	var moscow_next_day_time = new Date();
+	moscow_next_day_time.setTime(moscow_time.getTime() + 24 * 60 * 60 * 1000);
+
+	var hours_ak = (moscow_time.getUTCHours());
+	var day = moscow_time.getUTCDate();
+	var month = moscow_time.getUTCMonth();
+	var day_of_week = moscow_time.getUTCDay();
+
+
+	if (hours_ak >= 15) {
+		day = moscow_next_day_time.getUTCDate();
+		day_of_week = moscow_next_day_time.getUTCDay();
+		month = moscow_next_day_time.getUTCMonth();
+	}
+
+	var monthes = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+	var weekdays = ['в воскресенье', 'в понедельник', 'во вторник', 'в среду', 'в четверг', 'пятницу', 'в субботу'];
+	$('.js_date').text(day + ' ' + monthes[month]);
+	$('.js_weekday').text(weekdays[day_of_week]);
+
+
+});
+
+
+
+
+
+// You can also use "$(window).load(function() {"
+
+var seats = Math.floor(Math.random() * (32 - 13) + 13);
+function InfoDVDSeats() { document.write(seats); }
+
+
+function ShowTimer() {
+
+	var today = new Date();
+	var moscow_time = new Date();
+	moscow_time.setTime(today.getTime() + 3 * 60 * 60 * 1000);
+
+	var moscow_next_day_time = new Date();
+	moscow_next_day_time.setTime(moscow_time.getTime() + 24 * 60 * 60 * 1000);
+
+	var hours_ak = (moscow_time.getUTCHours());
+	var day = moscow_time.getUTCDate();
+	var month = moscow_time.getUTCMonth();
+	var day_of_week = moscow_time.getUTCDay();
+
+
+	var time_l_nk;
+
+
+	if (hours_ak >= 15 && hours_ak <= 19) {
+		day = moscow_next_day_time.getUTCDate();
+		day_of_week = moscow_next_day_time.getUTCDay();
+		month = moscow_next_day_time.getUTCMonth();
+		time_l_nk = 48;
+	}
+	else {
+		time_l_nk = 24;
+	}
+
+
+
+
+	var _id = "f9af99df355584d1355c120b8d09f0a0";
+	while (document.getElementById("timer" + _id)) _id = _id + "0";
+	document.write("<div id='timer" + _id + "' style='min-width:369px;height:72px;'></div>");
+	var _t = document.createElement("script");
+	_t.src = "//info-dvd.ru/js/megatimer/timer.min.js";
+	var _f = function (_k) {
+		var l = new MegaTimer(_id, {
+			"view": [1, 1, 1, 1],
+			"type": {
+				"currentType": "3",
+				"params": {
+					"weekdays": [1, 1, 1, 1, 1, 1, 1],
+					"usertime": false,
+					"time": "19:00",
+					"tz": -180,
+					"hours": time_l_nk,
+					"minutes": "0"
+				}
+			},
+			"design": {
+				"type": "text",
+				"params": {
+					"number-font-family": {
+						"family": "Comfortaa",
+						"link": "<link href='//fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic' rel='stylesheet' type='text/css'>"
+					},
+					"number-font-size": "60",
+					"number-font-color": "#000",
+					"separator-margin": "20",
+					"separator-on": false,
+					"separator-text": ":",
+					"text-on": true,
+					"text-font-family": {
+						"family": "Comfortaa",
+						"link": "<link href='//fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic' rel='stylesheet' type='text/css'>"
+					},
+					"text-font-size": "12",
+					"text-font-color": "#c7c7c7"
+				}
+			},
+			"designId": 1,
+			"theme": "white",
+			"width": 369,
+			"height": 72
+		});
+		if (_k != null) l.run();
+	};
+	_t.onload = _f;
+	_t.onreadystatechange = function () {
+		if (_t.readyState == "loaded") _f(1);
+	};
+	var _h = document.head || document.getElementsByTagName("head")[0];
+	_h.appendChild(_t);
+
+};
+
+
+

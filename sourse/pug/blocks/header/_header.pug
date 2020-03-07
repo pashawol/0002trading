@@ -1,0 +1,22 @@
+mixin header()
+
+	// start HEADER.header
+	+b.HEADER.header--1.block-with-lazy
+		.container
+			+e.wrap
+				+e.top-text Бесплатно! Пошаговый онлайн-курс: с&nbsp;нуля до&nbsp;первой прибыли
+				+e.lg-text Быстрый старт
+				+e.title $100&nbsp;в день на&nbsp;CME с&nbsp;абсолютного нуля
+				p Зарегистрируйтесь прямо сейчас и&nbsp;получите моментальный доступ к&nbsp;пошаговому онлайн-курсу, который доведет Вас до&nbsp;первой прибыли на&nbsp;СМЕ
+				+e.btn-wrap.text-md-left.text-center
+					+e.img-wrap
+						+pic('man.png')
+						+e.name Евгений Стриж
+					.block-decorate
+						+e.btn.btn.lb_target(type="button") Успейте получить бесплатно
+				.time__block
+						
+					
+					.idvd_timer.autostart(data-redirect_url='', data-duration_hours='36.5')
+
+	// end HEADER.header
