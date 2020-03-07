@@ -22,8 +22,8 @@ function eventHandler() {
 		nextArrow: arrl2,
 		dots: true,
 		// autoplay: true,
-		autoplaySpeed: 6000 // lazyLoad: 'progressive',
-
+		autoplaySpeed: 6000,
+		lazyLoad: 'progressive'
 	};
 	$('.slider-js').slick(_objectSpread({}, defaultSlide, {
 		slidesToShow: 1

@@ -19,7 +19,7 @@ function eventHandler() {
 		dots: true,
 		// autoplay: true,
 		autoplaySpeed: 6000,
-		// lazyLoad: 'progressive',
+		lazyLoad: 'progressive',
 	};
 	$('.slider-js').slick({
 		...defaultSlide,
