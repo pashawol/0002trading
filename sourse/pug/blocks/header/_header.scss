@@ -14,8 +14,59 @@
     position: relative;
   }
 
+  background-color: $body-color;
+
+  &--reverse {
+    .header {
+      &__wrap {
+        @include media-breakpoint-up(lg) {
+
+          margin-left: auto;
+        }
+      }
+
+      &__img-wrap {
+
+        @include media-breakpoint-up(xxl) {
+
+          left: rem(-70);
+        }
+
+        @include media-breakpoint-only(xl) {
+          left: rem(0);
+        }
+
+
+        @include media-breakpoint-only(lg) {
+          left: rem(-100);
+        }
+
+
+      }
+
+    }
+  }
+
   &--1 {
     background-image: url(../img/@2x/header-bg-1.jpg);
+  }
+
+  &--2 {
+    background-image: url(../img/@2x/header-bg-2.jpg);
+
+
+  }
+
+  &--3 {
+    background-image: url(../img/@2x/header-bg-3.jpg);
+  }
+
+  &--4 {
+    background-image: url(../img/@2x/header-bg-4.jpg);
+  }
+
+  &--5 {
+    background-image: url(../img/@2x/header-bg-5.jpg);
   }
 
   color: #ffffff;
