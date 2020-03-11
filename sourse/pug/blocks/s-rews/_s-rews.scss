@@ -8,6 +8,8 @@
 	}
 
 	&__slide {
+		text-align: center;
+
 		@include media-breakpoint-up(md) {
 
 			padding: rem(60) rem(40);
