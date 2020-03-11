@@ -126,8 +126,13 @@
 	.slick-arrow {
 		position: absolute;
 
-		top: 50% !important;
-		transform: translateY(-50%);
+		@include media-breakpoint-up(sm) {
+
+			top: 50% !important;
+			transform: translateY(-50%);
+		}
+
+		top: rem(150);
 	}
 
 	padding-top: rem(100) !important;
