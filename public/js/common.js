@@ -1,5 +1,11 @@
 "use strict";
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var $ = jQuery;
 
 function eventHandler() {
@@ -7,7 +13,14 @@ function eventHandler() {
 	var arrl2 = ' <div class="r">' + icon,
 			arrr2 = ' <div class="l">' + icon; // // карусель
 
-	$('.slider-js').slick({
+	var $status = $('.pagingInfo');
+	var $slickElement = $('.s-rews__slider--js');
+	$slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+		//currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+		var i = (currentSlide ? currentSlide : 0) + 1;
+		$status.html(i + '<span class="text-secondary"> /</span> ' + slick.slideCount);
+	});
+	var defSl = {
 		speed: 600,
 		infinite: true,
 		arrows: true,
@@ -18,8 +31,11 @@ function eventHandler() {
 		// autoplay: true,
 		// autoplaySpeed: 6000,
 		lazyLoad: 'progressive',
-		slidesToShow: 1
-	});
+		slidesToShow: 1,
+		adaptiveHeight: true
+	};
+	$slickElement.slick(_objectSpread({}, defSl));
+	$('.slider-js').slick(_objectSpread({}, defSl));
 	$(function () {
 		var today = new Date();
 		var moscow_time = new Date();

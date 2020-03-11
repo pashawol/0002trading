@@ -6,8 +6,10 @@ mixin s-training()
 			+e.slider.slider-js
 				- for (var x = 1; x < 7; x++)
 					+e.slide
-						+e.img-wrap
+						+e.img-wrap(href=`img/@2x/${x}lg.jpg` data-fancybox='training')
 							img.res-i(src="#" data-lazy=`img/@2x/${x}.jpg`, alt="")
+			
+
 			+e.wrap
 				.row
 					.col-md-6

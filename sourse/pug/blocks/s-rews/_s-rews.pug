@@ -4,10 +4,11 @@ mixin s-rews()
 		.container
 			h2 Сомневаетесь, что у&nbsp;Вас получится?
 			p #[strong Думаете заключать такие прибыльные сделки под силу лишь опытным трейдерам?] Вы&nbsp;ошибаетесь! Десятки наших учеников на&nbsp;собственном примере ежедневно доказывают обратное:
-			+e.slider.slider-js
+			+e.slider--js
 				- for (var x = 1; x < 21; x++)
 					+e.slide
 						+e.img-wrap(href=`img/@2x/mage${x}.jpg` data-fancybox="gal-rew")
-							img.res-i(src="#" data-lazy=`img/@2x/mage${x}.jpg`, alt="")
+							img.res-i(src="#" data-lazy=`img/rew/mage${x}.jpg`, alt="")
+			.pagingInfo.text-center.h6.text-primary
 			+e.btn.btn.lb_target(type="button") Кликните сюда, чтобы получить бесплатный доступ
 	// end s-rews

@@ -9,8 +9,19 @@ function eventHandler() {
 		arrr2 = (' <div class="l">' + icon);
 	// // карусель
 
-	$('.slider-js').slick({
 
+
+
+	var $status = $('.pagingInfo');
+	var $slickElement = $('.s-rews__slider--js');
+
+	$slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+		//currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+		var i = (currentSlide ? currentSlide : 0) + 1;
+		$status.html(i + '<span class="text-secondary"> /</span> ' + slick.slideCount);
+	});
+
+	let defSl = {
 		speed: 600,
 		infinite: true,
 		arrows: true,
@@ -22,8 +33,21 @@ function eventHandler() {
 		// autoplaySpeed: 6000,
 		lazyLoad: 'progressive',
 		slidesToShow: 1,
+		adaptiveHeight: true
+	}
+
+	$slickElement.slick({
+
+		...defSl
 
 	});
+
+	$('.slider-js').slick({
+
+		...defSl
+
+	});
+
 
 	$(function () {
 		var today = new Date();

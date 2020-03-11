@@ -255,8 +255,14 @@ body {
 
 .slick-arrow {
 	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
+
+	@include media-breakpoint-up(md) {
+
+		top: rem(200px);
+	}
+
+	top: rem(150px);
+	// transform: translateY(-50%);
 	z-index: 2;
 	cursor: pointer;
 
@@ -494,6 +500,6 @@ a {
 }
 
 .slick-track {
-	display: flex;
-	align-items: center;
+	// display: flex;
+	// align-items: center;
 }
