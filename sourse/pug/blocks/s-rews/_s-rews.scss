@@ -25,6 +25,7 @@
 	}
 
 	&__img-wrap {
+		display: block;
 		background-color: #ffffff;
 
 		@include media-breakpoint-up(md) {
