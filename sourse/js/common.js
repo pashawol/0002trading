@@ -48,6 +48,14 @@ function eventHandler() {
 
 	});
 
+	// $('.fancy-gal:not(.slick-cloned)').fancybox();
+	$().fancybox({
+		selector: '.s-training .slick-slide:not(.slick-cloned) a',
+
+	});
+	$().fancybox({
+		selector: '.s-rews .slick-slide:not(.slick-cloned) a',
+	});
 
 	$(function () {
 		var today = new Date();

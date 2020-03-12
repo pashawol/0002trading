@@ -35,7 +35,14 @@ function eventHandler() {
 		adaptiveHeight: true
 	};
 	$slickElement.slick(_objectSpread({}, defSl));
-	$('.slider-js').slick(_objectSpread({}, defSl));
+	$('.slider-js').slick(_objectSpread({}, defSl)); // $('.fancy-gal:not(.slick-cloned)').fancybox();
+
+	$().fancybox({
+		selector: '.s-training .slick-slide:not(.slick-cloned) a'
+	});
+	$().fancybox({
+		selector: '.s-rews .slick-slide:not(.slick-cloned) a'
+	});
 	$(function () {
 		var today = new Date();
 		var moscow_time = new Date();

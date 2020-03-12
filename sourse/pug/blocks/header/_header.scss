@@ -80,6 +80,8 @@
 
   &__wrap {
     max-width: rem(680);
+    position: relative;
+    z-index: 2;
   }
 
   &__top-text {
@@ -147,7 +149,8 @@
     @include media-breakpoint-up(xxl) {
 
       right: rem(70);
-      max-width: none;
+      // max-width: none;
+      max-width: rem(650);
     }
 
     @include media-breakpoint-up(xl) {
