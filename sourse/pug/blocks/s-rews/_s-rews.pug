@@ -11,7 +11,7 @@ mixin s-rews()
 				//- 			img.res-i(src="#" data-lazy=`img/rew/mage${x}.jpg`, alt="")
 				mixin slide(x)
 					+e.slide
-						+e.img-wrap(href=`img/@2x/mage${x}.jpg`  )
+						+e.img-wrap
 							img.res-i(src="#" data-lazy=`img/@2x/mage${x}.jpg`, alt="")
 				+slide("1")
 				+slide("2")
